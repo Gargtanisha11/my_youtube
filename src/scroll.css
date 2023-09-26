@@ -1,0 +1,14 @@
+.sidebar-scrollbar::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .sidebar-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #888;
+  }
+  .main-container-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .main-container-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #555;
+  }
