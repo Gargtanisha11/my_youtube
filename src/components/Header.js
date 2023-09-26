@@ -11,7 +11,7 @@ const Header = () => {
   }
  console.log(hamburgerOpenInfo);
   return (
-    <div className=" grid grid-flow-col  h-20 ">
+    <div className=" grid grid-flow-col  h-20 sticky top-0 bg-white">
       <div className=" flex col-span-1 mx-4  px-2">
         <div className="h-8 my-4 pr-4 " onClick={handleHamburgerClick}>
           <img
