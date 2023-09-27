@@ -9,20 +9,20 @@ const Header = () => {
   const handleHamburgerClick=()=>{
     hamburgerOpenInfo ? dispatch(closeMenu()) : dispatch(openMenu());
   }
- console.log(hamburgerOpenInfo);
+
   return (
     <div className=" grid grid-flow-col  h-20 sticky top-0 bg-white">
       <div className=" flex col-span-1 mx-4  px-2">
-        <div className="h-8 my-4 pr-4 " onClick={handleHamburgerClick}>
+        <div className="h-8 my-4 pr-4 hover:bg-slate-600" onClick={handleHamburgerClick}>
           <img
-            className="h-8  active:bg-stone-300"
+            className="h-8 "
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSbeky9U1m4VnlgFNbLLxds3SFpUoJbLWLeNQuQqI&s"
             alt="No"
           />
         </div>
         <div className=" h-16 ">
           <img
-            className=" h-16 "
+            className=" h-16  "
             src="https://www.freeiconspng.com/thumbs/youtube-logo-png/youtube-logo-png-transparent-image-5.png"
             alt=""
           />

@@ -1,15 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { addInfo } from "../utils/redux/videoInfo";
+
 const VideoCard = ({ info }) => {
-  const dispatch = useDispatch();
-  const [hamburgerOpenInfo] = useState(useSelector((store) => store.videoInfo.info));
-  const addVdInfo = () => {
-    dispatch(addInfo(info));
-    console.log(hamburgerOpenInfo);    
-  };
+ 
   return (
-    <div className="m-5 w-80 " onClick={addVdInfo}>
+    <div className="m-5 w-80 " >
       <img
         className=" rounded-xl"
         src={info?.snippet?.thumbnails?.medium?.url}
