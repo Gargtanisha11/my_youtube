@@ -2,7 +2,7 @@
 const VideoCard = ({ info }) => {
  
   return (
-    <div className="m-5 w-80 " >
+    <div className="m-2 w-72 pt-4 " >
       <img
         className=" rounded-xl"
         src={info?.snippet?.thumbnails?.medium?.url}
