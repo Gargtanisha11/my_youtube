@@ -5,7 +5,7 @@ import UpperButtons from './UpperButtons';
 const MainContainer = () => {
   
   return (
-    <div className='mx-5'>
+    <div className='mx-5  w-[88%]'>
       <UpperButtons/>
       <VideoContainer/>
     </div>

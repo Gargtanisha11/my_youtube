@@ -24,3 +24,4 @@ yarn-error.log*
 
 
 src/key.js
+src/utils/MOCKDATA_COMMENT.js

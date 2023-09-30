@@ -7,10 +7,7 @@ const useChannelInfo=(channelId)=>{
         if(channelId !== undefined){
         fetchData();
         }
-        else{
-            console.log("hihihi...");
-        }
-        
+       
     },[channelId]);
     const fetchData=async()=>{
         const data = await fetch(YOUTUBE_CHANNEL+"&id=" +channelId);

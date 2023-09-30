@@ -1,10 +1,12 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 const BarClose = () => {
   return (
-    <div className=" p-4 w-24 h-20 sticky top-20 text-sm ">
+    <div className=" mx-4 pl-2 w-24 h-20 sticky top-20 text-sm ">
      
+        
+        <Link to="/">
         <div className="p-2  hover:bg-stone-300 rounded-xl ">
           <img
             className=" w-14"
@@ -13,6 +15,7 @@ const BarClose = () => {
           />
           <button className="p-2  text-sm">Home</button>
         </div>
+        </Link>
         <div className="py-2 ml-4  hover:bg-stone-300 rounded-xl ">
           <img
             className="w-5 ml-2 "

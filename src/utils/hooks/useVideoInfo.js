@@ -11,7 +11,7 @@ const useVideoInfo = (vdId) => {
   
   useEffect(() => {
     fetchData();
-  },[]);
+  },[vdId]);
   const fetchData = async () => {
     const vdData = await fetch(pathOfVideo);
     const vdJson = await vdData.json();

@@ -7,10 +7,10 @@ import { cacheResult } from "../utils/redux/suggestionsSlice";
 const Header = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [searchSuggestions, setSearchSuggestions] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(" ");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const suggestionInfo = useSelector((store) => store.suggestion);
-  console.log("redux  " + suggestionInfo[searchQuery]);
+  
 
   const dispatch = useDispatch();
   const hamburgerOpenInfo = useSelector(
@@ -21,9 +21,10 @@ const Header = () => {
     hamburgerOpenInfo ? dispatch(closeMenu()) : dispatch(openMenu());
   };
 
-  const handleClick=()=>{
-    console.log("lll");
-  }
+  const handleSuggestionClick = (s) => {
+   setSearchQuery(s);
+   setShowSuggestions(false);
+  };
 
   const getSearchSuggestions = async () => {
     const data = await fetch(
@@ -31,7 +32,7 @@ const Header = () => {
         searchQuery
     );
     const json = await data.json();
-    console.log(json);
+   
     setSearchSuggestions(json[1]);
     dispatch(cacheResult({ [searchQuery]: json[1] }));
   };
@@ -51,14 +52,14 @@ const Header = () => {
 
   return (
     <div className=" grid grid-flow-col  h-20 sticky top-0 bg-white">
-      <div className=" flex col-span-1 mx-4  px-2">
+      <div className=" flex col-span-1 mx-4  px-2 b">
         <div
-          className="h-8 my-4 pr-4 hover:bg-slate-600"
+          className="h-10 my-4 mr-4  hover:bg-stone-200 rounded-full"
           onClick={handleHamburgerClick}
         >
           <img
-            className="h-8 "
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSbeky9U1m4VnlgFNbLLxds3SFpUoJbLWLeNQuQqI&s.png"
+            className="h-8 px-1 "
+            src="https://cdn.iconscout.com/icon/free/png-256/free-hamburger-menu-462145.png?f=webp"
             alt="No"
           />
         </div>
@@ -71,15 +72,14 @@ const Header = () => {
         </div>
       </div>
       <div className="flex col-span-10 my-5 pl-28 ">
-        <div
-          
-        >
+        <div className=" h-auto">
           <input
             className="border border-solid border-gray-500 rounded-l-full  w-[34rem] h-9 bg-stone-100 px-7"
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            onFocus={()=>setShowSuggestions(true)}
+            onFocus={() => setShowSuggestions(true)}
+            onBlur={()=>setTimeout(setShowSuggestions(false),200)}
           />
           {showSuggestions && (
             <div className="fixed rounded-lg border border-gray-400 w-[34rem] bg-white shadow-lg px-2 py-5 h-auto">
@@ -88,8 +88,7 @@ const Header = () => {
                   <li
                     key={s}
                     className=" font-medium py-1 text-xl hover:bg-stone-100 cursor-default"
-                    onClick={() => setSearchQuery(s)}
-                    onBlur={()=> setShowSuggestions(false)}
+                    onClick={() => handleSuggestionClick(s)}
                   >
                     🔍 {s}
                   </li>

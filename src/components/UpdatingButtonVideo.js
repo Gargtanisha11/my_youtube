@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 const UpdatingButtonVideo = ({ videoInfo, channelInfo }) => {
   const [hideDescription, setHideDescription] = useState("...more");
@@ -6,7 +6,7 @@ const UpdatingButtonVideo = ({ videoInfo, channelInfo }) => {
   const handleClickMore=()=>{
     hideDescription==="...more" ? setHideDescription("...less") :setHideDescription("...more");
   }
-
+  
   return (
     <div>
       <div className="flex justify-between">

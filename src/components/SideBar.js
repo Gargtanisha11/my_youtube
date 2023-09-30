@@ -6,7 +6,7 @@ import ExtraButtonSidebar from "./ExtraButtonSidebar";
 
 const SideBar = () => {
   return (
-    <div className=" p-4 m-4 w-2/12 h-[41rem] sticky top-20 ">
+    <div className=" pl-2 mx-4 w-[12%] h-[41rem] sticky top-20 ">
       <NormalButtonSideBar/>
       <ExtraButtonSidebar/>
       <Explore/>

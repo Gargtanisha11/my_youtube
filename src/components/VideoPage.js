@@ -8,6 +8,7 @@ import useChannelInfo from "../utils/hooks/useChannelInfo";
 import useVideoInfo from "../utils/hooks/useVideoInfo";
 import RecommendeVideoForWatch from "./RecommendeVideoForWatch";
 import VideoComments from "./VideoComments";
+import comments from "../utils/MOCKDATA_COMMENT";
 
 const VideoPage = () => {
   const [searchParams] = useSearchParams();
@@ -34,7 +35,7 @@ const VideoPage = () => {
     <div className="p-5 w-[1020px] ">
       <VideoFrame videoInfo={videoInfo} pathOfFrame={pathOfFrame} />
       <UpdatingButtonVideo videoInfo={videoInfo} channelInfo={channelInfo} />
-      <VideoComments vdId={vdId}/>
+      <VideoComments vdId={vdId} comments={comments} />
     </div>
     <RecommendeVideoForWatch/>
     </div>

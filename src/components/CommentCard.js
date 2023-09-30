@@ -2,7 +2,7 @@ import React from "react";
 
 const CommentCard = ({comment}) => {
     //comment.snippet.topLevelComment.snippet.authorProfileImageUrl
-  
+   
     return (
     <div className="flex m-4">
         <div className="px-4">
@@ -14,7 +14,7 @@ const CommentCard = ({comment}) => {
           <button className=" rounded-full p-2 hover:bg-stone-200 active:bg-stone-50 m-2">👍🏻</button>
           <h1 className=" mr-2 my-5">{comment?.snippet?.topLevelComment?.snippet?.likeCount}</h1>
           <button className="rounded-full p-2 hover:bg-stone-200 active:bg-stone-50 m-2">👎🏻</button>
-          <button className="rounded-full px-4 py-1 hover:bg-stone-200 active:bg-stone-50 m-2 text-sm">Reply</button>
+          <button className="rounded-full px-4 py-1 hover:bg-stone-200 active:bg-stone-50 m-2 text-sm">Reply {comment.snippet.totalReplyCount}</button>
         </div>
       </div>
     </div>
