@@ -12,7 +12,7 @@ const useVideoComment=(vdId)=>{
     const fetchData=async()=>{
         const data=await fetch(YOUTUBE_VIDEO_COMMENT+vdId);
         const json=await data.json();
-       
+       console.log(json);
         setCommentList(json.items)
     }
 

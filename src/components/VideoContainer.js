@@ -10,12 +10,12 @@ const VideoContainer = () => {
  const videoList=usePopularVideo(YOUTUBE_POPULAR_VIDEOS);
 
   
- if(videoList===null){
+ if(videoList.length===0){
   return <Shimmer/>
  }
   return (
     <div className="px-2 py-5 flex flex-wrap">
-        {videoList.map(video=> <Link to={"/watch?v="+video.id} key={video.id}><VideoCard  info={video} /></Link>
+        {videoList.map(video=> <Link to={"/watch?v="+video.id} key={video.id}><VideoCard  info={video} thumbnail={"medium"}/></Link>
         )}
       
     </div>

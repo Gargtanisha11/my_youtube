@@ -3,18 +3,38 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import { Provider } from "react-redux";
 import myYoutubeStore from "./utils/redux/myYoutubeStore";
-import {  RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import VideoPage from "./components/VideoPage";
 import MainContainer from "./components/MainContainer";
- 
- const appRoute = createBrowserRouter([
+import SearchedVideoPage from "./components/SearchedVideoPage";
+import VideoComments from "./components/VideoComments";
+import VideoContainer from "./components/VideoContainer";
+
+export const appRoute = createBrowserRouter([
   {
     path: "/",
-    element: <Body />,
+    element: <App />,
     children: [
       {
-        path:"/",
-        element:<MainContainer/>
+        path: "/",
+        element: <Body />,
+        children: [
+          {
+            path: "/",
+            element: <MainContainer />,
+            children: [
+              {
+                path: "/",
+                element: <VideoContainer />,
+              },
+              {
+                path: "/results",
+                element: <SearchedVideoPage />,
+              },
+            ],
+          },
+          
+        ],
       },
       {
         path: "/watch",
@@ -29,13 +49,10 @@ function App() {
     <Provider store={myYoutubeStore}>
       <div className="App ">
         <Header />
-        <RouterProvider router={appRoute}/>
-       
+        <Outlet/>
       </div>
     </Provider>
   );
 }
-
-
 
 export default App;

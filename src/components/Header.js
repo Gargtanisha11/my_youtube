@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { openMenu, closeMenu } from "../utils/redux/hamburgerSlice";
 import { cacheResult } from "../utils/redux/suggestionsSlice";
-
+import { Link } from "react-router-dom";
 //
 const Header = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -25,6 +25,12 @@ const Header = () => {
    setSearchQuery(s);
    setShowSuggestions(false);
   };
+
+
+   const handleClickSuggestion=()=>{
+    setTimeout(()=>setShowSuggestions(false),200);
+    console.log("pppp");
+   }
 
   const getSearchSuggestions = async () => {
     const data = await fetch(
@@ -79,7 +85,7 @@ const Header = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setShowSuggestions(true)}
-            onBlur={()=>setTimeout(setShowSuggestions(false),200)}
+            onBlur={()=>handleClickSuggestion()}
           />
           {showSuggestions && (
             <div className="fixed rounded-lg border border-gray-400 w-[34rem] bg-white shadow-lg px-2 py-5 h-auto">
@@ -97,9 +103,9 @@ const Header = () => {
             </div>
           )}
         </div>
-        <div className="border border-solid  border-gray-500 rounded-r-full w-16 h-9 p-1  active:bg-stone-300 bg-stone-100">
+        <Link  to={"/results?search_query="+searchQuery}><div className="border border-solid  border-gray-500 rounded-r-full w-16 h-9 p-1  active:bg-stone-300 bg-stone-100 " >
           <button>Search</button>
-        </div>
+        </div></Link>
       </div>
       <div className=" col-span-1 my-5">
         <img

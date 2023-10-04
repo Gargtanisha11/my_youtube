@@ -57,12 +57,16 @@ const UpdatingButtonVideo = ({ videoInfo, channelInfo }) => {
       >
         <div className="flex justify-between">
         <div>
-          {videoInfo?.statistics?.viewCount}views
-          {videoInfo?.snippet?.publishedAt}
+          <span className="pr-5">{videoInfo?.statistics?.viewCount}views</span>
+         <span>{videoInfo?.snippet?.publishedAt}</span> 
         </div> 
         <button className=" bg-black text-white rounded-xl w-20 p-2" onClick={handleClickMore}> {hideDescription}</button>
         </div>
-        <span>{videoInfo?.snippet?.description}</span>
+        {videoInfo?.snippet?.description.split('\n').map((l,index)=>(
+          
+          <h1 key={index}>{l}</h1>
+        ))}
+       
 
         
       </div>
