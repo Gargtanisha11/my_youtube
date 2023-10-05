@@ -11,7 +11,7 @@ import VideoComments from "./VideoComments";
 import comments from "../utils/MOCKDATA_COMMENT";
 import LiveChatComponent from "./LiveChatComponent";
 import SideBar from "./SideBar";
-import BarClose from "./BarClose";
+
 const VideoPage = () => {
   const [searchParams] = useSearchParams();
   const vdId = searchParams.get("v");
