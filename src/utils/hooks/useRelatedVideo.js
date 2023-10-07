@@ -5,7 +5,7 @@ const useRelatedVideo = ( query ) => {
   const [relatedSearchList, setRelatedSearchList] = useState([]);
 
   useEffect(() => {
-   // fetchData();
+    fetchData();
   }, [query]);
 
   const fetchData = async () => {

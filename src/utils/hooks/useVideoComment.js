@@ -6,7 +6,7 @@ const useVideoComment=(vdId)=>{
     const [commentList,setCommentList]=useState([]);
     
     useEffect(()=>{
-     //   fetchData();
+        fetchData();
     },[vdId])
 
     const fetchData=async()=>{

@@ -28,11 +28,11 @@ const [myMessage,setMyMessage]= useState("");
       </div>
       <div className="  border-y border-gray p-5 h-32 ">
         <div className="flex flex-row">
-          <input type="text" className="border border-black " value={myMessage} onChange={(e)=>{
+          <input type="text" className=" border border-r-0 border-l-0 border-t-0 border-b-1 border-gray " value={myMessage} onChange={(e)=>{
             setMyMessage(e.target.value);
 
           }}/>
-          <button onClick={()=>{
+          <button className=" text-white bg-black font-semibold px-5 py-3 rounded-full  hover:bg-gray-800 active:bg-gray-950" onClick={()=>{
             dispatch(addMessage({name:"Tanisha garg" ,message:myMessage}))
             setMyMessage("");
           }} >Send</button>

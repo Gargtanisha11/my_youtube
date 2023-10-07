@@ -47,7 +47,7 @@ export const appRoute = createBrowserRouter([
 function App() {
   return (
     <Provider store={myYoutubeStore}>
-      <div className="App ">
+      <div className="App " >
         <Header />
         <Outlet/>
       </div>

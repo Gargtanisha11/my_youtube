@@ -11,7 +11,7 @@ const Body = () => {
   );
 
   return (
-    <div className="flex ">
+    <div className="flex  "  >
       { console.log(hamburgerOpenInfo)}
       {hamburgerOpenInfo ? <SideBar /> : <BarClose />}
       <Outlet />

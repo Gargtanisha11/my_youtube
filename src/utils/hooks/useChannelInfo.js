@@ -5,7 +5,7 @@ const useChannelInfo=(channelId)=>{
     const [channel,setChannel]=useState([]);
     useEffect(()=>{
         if(channelId !== undefined){
-       // fetchData();
+        fetchData();
         }
        
     },[channelId]);

@@ -4,7 +4,7 @@ const usePopularVideo = (pathOfPopVideoList) => {
   const [popVideoList, setPopVideoList] = useState([]);
 
   useEffect(() => {
-  //  fetchData();
+    fetchData();
   }, []);
 
   const fetchData = async () => {

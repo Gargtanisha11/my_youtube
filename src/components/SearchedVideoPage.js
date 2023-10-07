@@ -15,6 +15,7 @@ const SearchedVideoPage = () => {
   return <div>
     {
         searchList.map((video)=>(
+          
             <Link to={"/watch?v="+video?.id?.videoId} key={video?.id?.videoId} ><SearchedVideoCard vdId={video?.id?.videoId}/></Link>
         ))
     }

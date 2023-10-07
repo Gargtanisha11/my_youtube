@@ -8,8 +8,8 @@ example
 
 # search bar 
  - api call for suggestions
- - optimisize it by calling only if key press time is more tham 200ms 
- - store the previous suggestions in redux slice (suggestion slice ) so that use it if same query ask 
+ - Debouncing :- optimisize it by calling only if key press time is more tham 200ms 
+ - Caching :- store the previous suggestions in redux slice (suggestion slice ) so that use it if same query ask 
  - we can also optimize it by set the size of slice so that it eliminate the old query suggestion 
 # live chat using mockdata
  - By api polling
