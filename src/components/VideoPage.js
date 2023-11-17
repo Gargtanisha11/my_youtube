@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import { closeMenu } from "../utils/redux/hamburgerSlice";
+
 import Shimmer from "./Shimmer";
 import UpdatingButtonVideo from "./UpdatingButtonVideo";
 import VideoFrame from "./VideoFrame";
@@ -29,7 +29,7 @@ const VideoPage = () => {
 
   const channelInfo = useChannelInfo(videoInfo?.snippet?.channelId);
 
-  const dispatch = useDispatch();
+
 
   if (videoInfo.length === 0) return <Shimmer />;
 

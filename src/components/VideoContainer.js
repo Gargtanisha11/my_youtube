@@ -14,7 +14,7 @@ const VideoContainer = () => {
   return <Shimmer/>
  }
   return (
-    <div className="px-2 py-5 flex flex-wrap h-[553px] overflow-y-scroll" onScroll={()=>console.log('hello hi')}>
+    <div className="px-2 py-5 flex flex-wrap h-[553px]" >
         {videoList.map(video=> <Link to={"/watch?v="+video.id} key={video.id}><VideoCard  info={video} thumbnail={"medium"}/></Link>
         )}
       

@@ -3,11 +3,11 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import { Provider } from "react-redux";
 import myYoutubeStore from "./utils/redux/myYoutubeStore";
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, createBrowserRouter } from "react-router-dom";
 import VideoPage from "./components/VideoPage";
 import MainContainer from "./components/MainContainer";
 import SearchedVideoPage from "./components/SearchedVideoPage";
-import VideoComments from "./components/VideoComments";
+
 import VideoContainer from "./components/VideoContainer";
 
 export const appRoute = createBrowserRouter([

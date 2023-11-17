@@ -28,7 +28,7 @@ const [myMessage,setMyMessage]= useState("");
       </div>
       <div className="  border-y border-gray p-5 h-32 ">
         <div className="flex flex-row">
-          <input type="text" className=" border border-r-0 border-l-0 border-t-0 border-b-1 border-gray " value={myMessage} onChange={(e)=>{
+          <input type="text" className=" border border-r-0 border-l-0 border-t-0 border-b-1  border-gray-400 " value={myMessage} onChange={(e)=>{
             setMyMessage(e.target.value);
 
           }}/>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import useRelatedVideo from "../utils/hooks/useRelatedVideo";
 import Shimmer from "./Shimmer";

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import VideoContainer from './VideoContainer';
+
 import UpperButtons from './UpperButtons';
 import { Outlet } from 'react-router-dom';
 const MainContainer = () => {
