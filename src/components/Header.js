@@ -77,7 +77,9 @@ const Header = () => {
           />
         </div>
       </div>
-      <div className="flex col-span-10 my-5 pl-28 ">
+      <form className="flex col-span-10 my-5 pl-28 "
+       onSubmit={(e) => e.preventDefault()}
+       action="">
         <div className=" h-auto">
           <input
             className="border border-solid border-gray-500 rounded-l-full  w-[34rem] h-9 bg-stone-100 px-7"
@@ -106,7 +108,7 @@ const Header = () => {
         <Link  to={"/results?search_query="+searchQuery}><div className="border border-solid  border-gray-500 rounded-r-full w-16 h-9 p-1  active:bg-stone-300 bg-stone-100 " >
           <button>Search</button>
         </div></Link>
-      </div>
+      </form>
       <div className=" col-span-1 my-5">
         <img
           className="h-9"
